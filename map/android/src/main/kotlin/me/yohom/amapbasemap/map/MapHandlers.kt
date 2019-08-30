@@ -236,11 +236,11 @@ object GetCenterLnglat : MapMethodHandler {
 
 object OpenOfflineManager : MapMethodHandler {
 
-    override fun with(map: AMap): MapMethodHandler {
+    fun with(map: AMap): MapMethodHandler {
         return this
     }
 
-    override fun onMethodCall(p0: MethodCall?, p1: MethodChannel.Result?) {
+    fun onMethodCall(p0: MethodCall?, p1: MethodChannel.Result?) {
         registrar.activity().startActivity(
                 Intent(AMapBaseMapPlugin.registrar.activity(),
                         OfflineMapActivity::class.java)
@@ -271,7 +271,7 @@ object SetCustomMapStylePath : MapMethodHandler {
 
     private lateinit var map: AMap
 
-    override fun with(map: AMap): SetCustomMapStylePath {
+    fun with(map: AMap): SetCustomMapStylePath {
         this.map = map
         return this
     }
