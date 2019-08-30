@@ -267,16 +267,18 @@ object GetCenterLnglat : MapMethodHandler {
 
 object OpenOfflineManager : MapMethodHandler {
 
-    fun with(map: AMap): MapMethodHandler {
+    override fun with(map: AMap): MapMethodHandler {
         return this
     }
-
-    fun onMethodCall(p0: MethodCall?, p1: MethodChannel.Result?) {
+    //报错代码注释
+    override fun onMethodCall(methodCall: MethodCall, methodResult: MethodChannel.Result){
+    }
+    /*override fun onMethodCall(p0: MethodCall?, p1: MethodChannel.Result?) {
         registrar.activity().startActivity(
                 Intent(AMapBaseMapPlugin.registrar.activity(),
                         OfflineMapActivity::class.java)
         )
-    }
+    }*/
 }
 
 object RemoveMarkers : MapMethodHandler {
@@ -360,7 +362,7 @@ object SetCustomMapStylePath : MapMethodHandler {
 
     private lateinit var map: AMap
 
-    fun with(map: AMap): SetCustomMapStylePath {
+    override fun with(map: AMap): SetCustomMapStylePath {
         this.map = map
         return this
     }
