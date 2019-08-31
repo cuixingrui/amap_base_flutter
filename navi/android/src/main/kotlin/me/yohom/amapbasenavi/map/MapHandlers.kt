@@ -68,7 +68,7 @@ object ClearMap : MapMethodHandler {
     }
 }
 
-object OpenOfflineManager: MapMethodHandler {
+/*object OpenOfflineManager: MapMethodHandler {
 
     override fun with(map: AMap): MapMethodHandler {
         return this
@@ -80,6 +80,22 @@ object OpenOfflineManager: MapMethodHandler {
                         OfflineMapActivity::class.java)
         )
     }
+}*/
+object OpenOfflineManager : MapMethodHandler {
+
+    override fun with(map: AMap): MapMethodHandler {
+        return this
+    }
+    //报错代码注释
+    override fun onMethodCall(methodCall: MethodCall, methodResult: MethodChannel.Result){
+    }
+
+    /*override fun onMethodCall(p0: MethodCall?, p1: MethodChannel.Result?) {
+        registrar.activity().startActivity(
+                Intent(AMapBaseMapPlugin.registrar.activity(),
+                        OfflineMapActivity::class.java)
+        )
+    }*/
 }
 
 object SetLanguage : MapMethodHandler {
