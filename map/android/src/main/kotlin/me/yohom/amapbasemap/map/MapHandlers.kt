@@ -273,7 +273,7 @@ object OpenOfflineManager : MapMethodHandler {
     //报错代码注释
     override fun onMethodCall(methodCall: MethodCall, methodResult: MethodChannel.Result){
     }
-    
+
     /*override fun onMethodCall(p0: MethodCall?, p1: MethodChannel.Result?) {
         registrar.activity().startActivity(
                 Intent(AMapBaseMapPlugin.registrar.activity(),
